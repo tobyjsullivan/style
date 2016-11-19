@@ -13,15 +13,15 @@ func EvaluateOutfit(o *Outfit) float64 {
 }
 
 func computeContrast(c1 colour.Colour, c2 colour.Colour) float64 {
-	q1 := calcQIYContrast(c1.GetHexColour())
-	q2 := calcQIYContrast(c2.GetHexColour())
+	q1 := calcQIYContrast(c1.RGBColour())
+	q2 := calcQIYContrast(c2.RGBColour())
 
 	println(fmt.Sprintf("Computed QIY's: %f, %f", q1, q2))
 
 	return q1 - q2
 }
 
-func calcQIYContrast(hc *colour.HexColour) float64 {
+func calcQIYContrast(hc *colour.RGBColour) float64 {
 	r := uint32(hc.R())
 	g := uint32(hc.G())
 	b := uint32(hc.B())

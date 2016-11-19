@@ -5,25 +5,25 @@ import (
 	"strconv"
 )
 
-type HexColour struct {
+type RGBColour struct {
 	red uint8
 	green uint8
 	blue uint8
 }
 
-func (c *HexColour) GetHexColour() *HexColour {
+func (c *RGBColour) RGBColour() *RGBColour {
 	return c
 }
 
-func (c *HexColour) R() uint8 {
+func (c *RGBColour) R() uint8 {
 	return c.red
 }
 
-func (c *HexColour) G() uint8 {
+func (c *RGBColour) G() uint8 {
 	return c.green
 }
 
-func (c *HexColour) B() uint8 {
+func (c *RGBColour) B() uint8 {
 	return c.blue
 }
 
@@ -45,7 +45,7 @@ func ColourFromHex(hexString string) (Colour, error) {
 		return nil, err
 	}
 
-	return &HexColour{
+	return &RGBColour{
 		red: uint8(r),
 		green: uint8(g),
 		blue: uint8(b) }, nil
