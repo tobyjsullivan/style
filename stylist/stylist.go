@@ -28,6 +28,8 @@ func calcQIYContrast(hc *colour.RGBColour) float64 {
 	return float64((r * 299) + (g * 587) + (b * 114))/1000
 }
 
+
+
 func materialMatchesSeason(m *material.Material, s *Season) bool {
 	switch m {
 	case material.MaterialWool:

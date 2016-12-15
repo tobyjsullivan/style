@@ -10,10 +10,14 @@ import (
 func main() {
 	println("Bleep bloop.")
 
-	blue, err := colour.ColourFromHex("000099")
+	blue, err := colour.ColourFromHex("449753")
 	if err != nil {
 		panic(err)
 	}
+
+	println(fmt.Sprintf("Hue of #449753 is; %d", blue.HSLColour().Hue()))
+	println(fmt.Sprintf("Saturation of #449753 is; %.02f", blue.HSLColour().Saturation()))
+	println(fmt.Sprintf("Lightness of #449753 is; %.02f", blue.HSLColour().Lightness()))
 
 	blueShirt := &apparel.Shirt{
 		Colour: blue,
